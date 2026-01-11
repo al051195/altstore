@@ -10,12 +10,21 @@
 <style>
 :root {
     --primary: #4A90E2;
-    --bg: radial-gradient(circle at top, #101010, #050505);
     --glass: rgba(25,25,25,.55);
     --border: rgba(255,255,255,.08);
     --text: #EAEAEA;
     --muted: #A0A0A0;
     --radius: 22px;
+}
+
+/* FIX BORDURES BLANCHES */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top, #101010, #050505);
+    overflow-x: hidden;
 }
 
 * {
@@ -25,9 +34,8 @@
 }
 
 body {
-    background: var(--bg);
-    color: var(--text);
     font-family: Inter, sans-serif;
+    color: var(--text);
     line-height: 1.6;
 }
 
@@ -85,6 +93,7 @@ h2 {
     padding: 16px;
     background: rgba(0,0,0,.45);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border);
     border-radius: 16px;
     overflow-x: auto;
@@ -119,10 +128,11 @@ h2 {
     width: 78px;
     height: 78px;
     border-radius: 22px;
+    flex-shrink: 0;
     box-shadow: 0 10px 30px rgba(0,0,0,.6);
 }
 
-/* Info */
+/* App info */
 .app-info h3 {
     font-size: 1.5em;
     margin-bottom: 6px;
@@ -226,7 +236,7 @@ footer {
 
 <header>
     <h1>📱 AL051195 AltStore Source</h1>
-    <p>Official AltStore source for my iOS applications</p>
+    <p>Official repository of my iOS apps available through AltStore</p>
 </header>
 
 <section class="add-source">
@@ -235,9 +245,10 @@ footer {
     <li>Open <strong>AltStore</strong> on your iPhone</li>
     <li>Go to the <strong>Sources</strong> tab</li>
     <li>Tap <strong>＋</strong></li>
-    <li>Paste the following URL</li>
+    <li>Paste the following URL:</li>
 </ol>
 <pre>https://al051195.github.io/altstore/ClassicSource.json</pre>
+<p>✅ The source will be added automatically.</p>
 </section>
 
 <section>
@@ -247,11 +258,12 @@ footer {
 
     <div class="app-header">
         <img class="app-icon"
-             src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/SkyWizard-SwiftUI/Other/Assets.xcassets/Weather-Preview.imageset/Weather-iOS-Default-1024x1024@1x.png">
+             src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/SkyWizard-SwiftUI/Other/Assets.xcassets/Weather-Preview.imageset/Weather-iOS-Default-1024x1024@1x.png"
+             alt="SkyWizard icon">
 
         <div class="app-info">
             <h3>🌤 SkyWizard</h3>
-            <p>Modern and elegant weather app designed with Liquid Glass aesthetics.</p>
+            <p>A modern and elegant weather app built with Liquid Glass in mind.</p>
 
             <ul>
                 <li><strong>Bundle ID:</strong> <code>com.Al051195.SkyWizard</code></li>
@@ -279,14 +291,15 @@ footer {
 <section class="notes">
 <h2>⚡ Notes</h2>
 <ul>
-    <li>All assets are hosted via <strong>GitHub Pages</strong>.</li>
-    <li>Updates automatically appear in AltStore.</li>
+    <li>All URLs in <code>ClassicSource.json</code> point to files hosted via <strong>GitHub Pages</strong>.</li>
+    <li>Updates to apps or screenshots will automatically reflect for anyone using the source.</li>
 </ul>
 </section>
 
 <section>
 <h2>📝 Contact</h2>
-<p>GitHub: <a href="https://github.com/al051195" target="_blank">github.com/al051195</a></p>
+<p>For feedback or questions, visit my GitHub profile:
+<a href="https://github.com/al051195" target="_blank">AL051195</a></p>
 </section>
 
 <footer>
