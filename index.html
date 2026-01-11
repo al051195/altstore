@@ -10,12 +10,12 @@
 <style>
 :root {
     --primary: #4A90E2;
-    --bg: #0B0B0B;
-    --card: #1C1C1C;
+    --bg: radial-gradient(circle at top, #101010, #050505);
+    --glass: rgba(25,25,25,.55);
+    --border: rgba(255,255,255,.08);
     --text: #EAEAEA;
-    --muted: #AAAAAA;
-    --border: #2E2E2E;
-    --radius: 16px;
+    --muted: #A0A0A0;
+    --radius: 22px;
 }
 
 * {
@@ -28,79 +28,109 @@ body {
     background: var(--bg);
     color: var(--text);
     font-family: Inter, sans-serif;
+    line-height: 1.6;
 }
 
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Layout */
 .container {
-    max-width: 960px;
+    max-width: 1100px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 /* Header */
 header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
 }
 
 header h1 {
-    font-size: 2.6em;
+    font-size: 2.8em;
 }
 
 header p {
     color: var(--muted);
-    margin-top: 8px;
+    margin-top: 12px;
+    font-size: 1.1em;
 }
 
-/* Section title */
+/* Sections */
+section {
+    margin-bottom: 80px;
+}
+
 h2 {
-    margin: 50px 0 20px;
+    font-size: 1.9em;
+    margin-bottom: 24px;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
-/* App grid */
-.apps {
-    display: grid;
-    gap: 30px;
+/* Add Source */
+.add-source ol {
+    margin-left: 22px;
 }
 
-/* App card */
+.add-source li {
+    margin-bottom: 10px;
+}
+
+.add-source pre {
+    margin-top: 12px;
+    padding: 16px;
+    background: rgba(0,0,0,.45);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow-x: auto;
+}
+
+/* App Card */
 .app-card {
-    background: var(--card);
+    background: var(--glass);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.5);
-    transition: transform .25s ease;
+    padding: 26px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.6);
+    transition: transform .35s ease, box-shadow .35s ease;
 }
 
 .app-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 30px 60px rgba(0,0,0,.8);
 }
 
-/* Header row */
+/* App header */
 .app-header {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     align-items: flex-start;
 }
 
-/* App icon */
+/* Icon */
 .app-icon {
-    width: 72px;
-    height: 72px;
-    border-radius: 18px;
-    flex-shrink: 0;
+    width: 78px;
+    height: 78px;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.6);
 }
 
-/* App info */
+/* Info */
 .app-info h3 {
-    font-size: 1.4em;
+    font-size: 1.5em;
     margin-bottom: 6px;
 }
 
 .app-info p {
     color: var(--muted);
-    font-size: .95em;
+    font-size: .96em;
     margin-bottom: 10px;
 }
 
@@ -116,53 +146,76 @@ h2 {
 /* Screenshots */
 .screenshots {
     display: flex;
-    gap: 10px;
+    gap: 14px;
     overflow-x: auto;
-    margin-top: 15px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+.screenshots::-webkit-scrollbar {
+    height: 6px;
+}
+
+.screenshots::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,.15);
+    border-radius: 10px;
 }
 
 .screenshots img {
-    height: 220px;
-    border-radius: 14px;
-    transition: transform .2s ease;
+    height: 240px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.7);
+    transition: transform .25s ease;
 }
 
 .screenshots img:hover {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
 /* Button */
 .altstore-btn {
     display: inline-block;
-    margin-top: 12px;
-    padding: 10px 16px;
-    background: var(--primary);
+    margin-top: 14px;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #4A90E2, #357ABD);
     color: white;
-    border-radius: 12px;
+    border-radius: 14px;
     font-weight: 600;
-    font-size: .9em;
+    font-size: .95em;
+    box-shadow: 0 10px 30px rgba(74,144,226,.4);
+    transition: transform .2s ease, box-shadow .2s ease;
 }
 
 .altstore-btn:hover {
-    opacity: .9;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(74,144,226,.6);
+}
+
+/* Notes */
+.notes ul {
+    margin-left: 22px;
+}
+
+.notes li {
+    margin-bottom: 10px;
 }
 
 /* Footer */
 footer {
-    margin-top: 80px;
     text-align: center;
     color: var(--muted);
     font-size: .85em;
+    margin-top: 80px;
 }
 
+/* Mobile */
 @media (max-width: 600px) {
     .app-header {
         flex-direction: column;
-        align-items: flex-start;
     }
 
     .screenshots img {
-        height: 160px;
+        height: 170px;
     }
 }
 </style>
@@ -173,15 +226,23 @@ footer {
 
 <header>
     <h1>📱 AL051195 AltStore Source</h1>
-    <p>Official repository of my iOS apps available through AltStore</p>
+    <p>Official AltStore source for my iOS applications</p>
 </header>
+
+<section class="add-source">
+<h2>🚀 Add this source to AltStore</h2>
+<ol>
+    <li>Open <strong>AltStore</strong> on your iPhone</li>
+    <li>Go to the <strong>Sources</strong> tab</li>
+    <li>Tap <strong>＋</strong></li>
+    <li>Paste the following URL</li>
+</ol>
+<pre>https://al051195.github.io/altstore/ClassicSource.json</pre>
+</section>
 
 <section>
 <h2>📦 Available Apps</h2>
 
-<div class="apps">
-
-<!-- SkyWizard -->
 <div class="app-card">
 
     <div class="app-header">
@@ -190,7 +251,7 @@ footer {
 
         <div class="app-info">
             <h3>🌤 SkyWizard</h3>
-            <p>Modern and elegant weather app built with Liquid Glass.</p>
+            <p>Modern and elegant weather app designed with Liquid Glass aesthetics.</p>
 
             <ul>
                 <li><strong>Bundle ID:</strong> <code>com.Al051195.SkyWizard</code></li>
@@ -213,8 +274,19 @@ footer {
     </div>
 
 </div>
+</section>
 
-</div>
+<section class="notes">
+<h2>⚡ Notes</h2>
+<ul>
+    <li>All assets are hosted via <strong>GitHub Pages</strong>.</li>
+    <li>Updates automatically appear in AltStore.</li>
+</ul>
+</section>
+
+<section>
+<h2>📝 Contact</h2>
+<p>GitHub: <a href="https://github.com/al051195" target="_blank">github.com/al051195</a></p>
 </section>
 
 <footer>
