@@ -1,156 +1,42 @@
 {
-    "name": "AL051195's apps library",
-    "subtitle": "All my apps in one place.",
-    "description": "Welcome to my source! Here you'll find all of my apps.",
-    "iconURL": "https://avatars.githubusercontent.com/u/215158776?v=4&size=64",
-    "headerURL": "https://f000.backblazeb2.com/file/rileytestut/ExampleSource/OceanHeader.png",
-    "website": "https://github.com/al051195",
-    "tintColor": "#4185A9",
-    "featuredApps": [
-        "com.Al051195.SkyWizard",
-        "com.example.anotherapp"
-    ],
-    "apps": [
+  "name": "AL051195's apps library",
+  "subtitle": "All my apps in one place.",
+  "description": "Welcome to my source! Here you'll find all of my apps.",
+  "iconURL": "https://avatars.githubusercontent.com/u/215158776?v=4&size=64",
+  "website": "https://github.com/al051195",
+  "tintColor": "#4185A9",
+  "featuredApps": [
+    "com.Al051195.SkyWizard"
+  ],
+  "apps": [
+    {
+      "name": "SkyWizard",
+      "bundleIdentifier": "com.Al051195.SkyWizard",
+      "developerName": "Al051195",
+      "subtitle": "An awesome app.",
+      "localizedDescription": "This is an awesome Weather app only available on AltStore.",
+      "iconURL": "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/SkyWizard-SwiftUI/Other/Assets.xcassets/Weather-Preview.imageset/Weather-iOS-Default-1024x1024@1x.png",
+      "tintColor": "#5CA399",
+      "screenshots": [
+        "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/banners/iphone1.png",
+        "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/banners/iphone2.png",
+        "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/banners/iphone3.png"
+      ],
+      "versions": [
         {
-            "name": "My Example App",
-            "bundleIdentifier": "com.Al051195.SkyWizard",
-            "developerName": "Al051195",
-            "subtitle": "An awesome app.",
-            "localizedDescription": "This is an awesome Weather app only available on AltStore.",
-            "iconURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/blob/master/SkyWizard-SwiftUI/Other/Assets.xcassets/Weather-Preview.imageset/Weather-iOS-Default-1024x1024%401x.png",
-            "tintColor": "#5CA399",
-            "screenshots": [
-                "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/blob/master/banners/iphone1.png",
-                "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/blob/master/banners/iphone2.png",
-                "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/blob/master/banners/iphone3.png",
-                "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/blob/master/banners/iphone4.png",
-                "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/blob/master/banners/iphone5.png",
-                "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/blob/master/banners/iphone6.png",
-                "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/blob/master/banners/iphone7.png",
-                {
-                    "imageURL": "https://example.com/myapp_landscape_screenshot.png",
-                    "width": 2556,
-                    "height": 1179
-                }
-            ],
-            "versions": [
-                {
-                    "version": "2.2",
-                    "date": "2025-12-06T09:00:00-08:00",
-                    "size": 50000000,
-                    "downloadURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/download/v2.2/SkyWizard-v2.2-Release.ipa",
-                    "localizedDescription": "New features and bug fixes. Full changelog on [Github](https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/tag/v2.2)",
-                    "minOSVersion": "26.0"
-                },
-                {
-                    "version": "2.1",
-                    "date": "2025-11-08T07:00:00-08:00",
-                    "size": 50000000,
-                    "downloadURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/download/v2.1/SkyWizard-v2.1-Release.ipa",
-                    "localizedDescription": "New features and bug fixes. Full changelog on [Github](https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/tag/v2.1)"
-                },
-                {
-                    "version": "2.0",
-                    "date": "2025-10-23T07:00:00-08:00",
-                    "size": 50000000,
-                    "downloadURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/download/v2.0/SkyWizard-LG-v2.0.0.ipa",
-                    "localizedDescription": "Initial release. Full changelog on [Github](https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/tag/v2.0)"
-                }
-            ],
-            "appPermissions": {
-                "privacy": {
-                    "NSLocationWhenInUseUsageDescription": "Sky Wizard needs access to your current location data to fetch weather for your location.",
-                }
-            }
-        },
-        {
-            "name": "Another Example App",
-            "bundleIdentifier": "com.example.anotherapp",
-            "developerName": "Example Developer",
-            "subtitle": "Another awesome app.",
-            "localizedDescription": "This is another awesome app only available on AltStore.",
-            "iconURL": "https://f000.backblazeb2.com/file/rileytestut/ExampleSource/SharkApp.png",
-            "tintColor": "#3660A2",
-            "screenshots": {
-                "iphone": [
-                    "https://example.com/anotherapp_portrait_1.png",
-                    "https://example.com/anotherapp_portrait_2.png",
-                    {
-                        "imageURL": "https://example.com/anotherapp_landscape.png",
-                        "width": 2556,
-                        "height": 1179
-                    }
-                ],
-                "ipad": [
-                    {
-                        "imageURL": "https://example.com/anotherapp_ipad_portrait.png",
-                        "width": 1668,
-                        "height": 2388
-                    },
-                    {
-                        "imageURL": "https://example.com/anotherapp_ipad_landscape.png",
-                        "width": 2388,
-                        "height": 1668
-                    }
-                ]
-            },
-            "versions": [
-                {
-                    "version": "1.2",
-                    "date": "2022-06-21T09:00:00-08:00",
-                    "downloadURL": "https://example.com/anotherapp_v1.2.ipa",
-                    "localizedDescription": "Bug fixes and performance improvements.",
-                    "size": 81514,
-                    "minOSVersion": "13.0"
-                },
-                {
-                    "version": "1.1",
-                    "date": "2022-04-15T10:00:00-08:00",
-                    "downloadURL": "https://example.com/anotherapp_v1.1.ipa",
-                    "localizedDescription": "New features!",
-                    "size": 81364,
-                    "minOSVersion": "13.0",
-                    "maxOSVersion": "16.3"
-                },
-                {
-                    "version": "1.0",
-                    "date": "2022-02-02T07:00:00-08:00",
-                    "downloadURL": "https://example.com/anotherapp_v1.0.ipa",
-                    "localizedDescription": "Initial release.",
-                    "size": 79821
-                }
-            ],
-            "appPermissions": {
-                "entitlements": [
-                    "com.apple.developer.healthkit",
-                    "com.apple.developer.game-center"
-                ],
-                "privacy": {
-                    "NSLocalNetworkUsageDescription": "App scans the local network for nearby computers."
-                }
-            }
+          "version": "2.2",
+          "date": "2025-12-06T09:00:00-08:00",
+          "size": 50000000,
+          "downloadURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/download/v2.2/SkyWizard-v2.2-Release.ipa",
+          "localizedDescription": "New features and bug fixes.",
+          "minOSVersion": "17.0"
         }
-    ],
-    "news": [
-        {
-            "title": "New Feature Announcement",
-            "identifier": "new_feature",
-            "caption": "Introducing a new feature in AltStore!",
-            "date": "2023-03-15",
-            "tintColor": "#5CA399",
-            "imageURL": "https://example.com/new_feature_image.png",
-            "notify": true,
-            "url": "https://example.com/new_feature_details"
-        },
-        {
-            "title": "App Update Available",
-            "identifier": "app_update",
-            "caption": "An update is available for My Example App.",
-            "date": "2023-03-10T10:00:00-07:00",
-            "tintColor": "#3660A2",
-            "imageURL": "https://example.com/app_update_image.png",
-            "notify": false,
-            "appID": "com.example.myapp"
+      ],
+      "appPermissions": {
+        "privacy": {
+          "NSLocationWhenInUseUsageDescription": "Sky Wizard needs access to your current location data to fetch weather for your location."
         }
-    ]
+      }
+    }
+  ]
 }
