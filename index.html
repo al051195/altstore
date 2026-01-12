@@ -8,9 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* =========================
+   GLOBAL / BLACK FIX
+========================= */
 :root {
     --primary: #4A90E2;
-    --glass: rgba(20,20,20,.65);
+    --glass: rgba(20,20,20,.7);
     --border: rgba(255,255,255,.06);
     --text: #EAEAEA;
     --muted: #9A9A9A;
@@ -22,166 +25,229 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #000;
+    background-color: #000000;
     overscroll-behavior: none;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: Inter, sans-serif;
     color: var(--text);
     line-height: 1.6;
+    -webkit-overflow-scrolling: touch;
 }
 
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* =========================
+   LAYOUT
+========================= */
 .container {
-    max-width: 960px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
 }
 
 header h1 {
-    font-size: 2.6em;
+    font-size: 2.8em;
 }
 
 header p {
     color: var(--muted);
-    margin-top: 10px;
+    margin-top: 12px;
+    font-size: 1.1em;
 }
 
-/* Global Add Button */
-.add-altstore {
-    display: flex;
-    justify-content: center;
-    margin: 40px 0 60px;
+/* =========================
+   SECTIONS
+========================= */
+section {
+    margin-bottom: 80px;
 }
 
-.add-altstore a {
-    padding: 14px 26px;
-    background: var(--primary);
-    color: #fff;
-    font-weight: 600;
-    border-radius: 999px;
-    text-decoration: none;
-    transition: transform .2s ease, box-shadow .2s ease;
-    box-shadow: 0 10px 30px rgba(74,144,226,.35);
-}
-
-.add-altstore a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(74,144,226,.45);
-}
-
-/* Section titles */
 h2 {
     font-size: 1.9em;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
 }
 
-/* Apps */
-.apps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+/* =========================
+   ADD SOURCE
+========================= */
+.add-source ol {
+    margin-left: 22px;
 }
 
+.add-source li {
+    margin-bottom: 10px;
+}
+
+.add-source pre {
+    margin-top: 12px;
+    padding: 16px;
+    background: #0B0B0B;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow-x: auto;
+}
+
+/* =========================
+   APP CARD
+========================= */
 .app-card {
     background: var(--glass);
-    backdrop-filter: blur(18px);
-    border-radius: var(--radius);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
     border: 1px solid var(--border);
-    padding: 20px;
-    transition: transform .25s ease, box-shadow .25s ease;
+    border-radius: var(--radius);
+    padding: 26px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.8);
+    transition: transform .35s ease, box-shadow .35s ease;
 }
 
 .app-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 50px rgba(0,0,0,.6);
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0,0,0,.9);
 }
 
-/* App header */
+/* =========================
+   APP HEADER
+========================= */
 .app-header {
     display: flex;
-    gap: 15px;
-    align-items: center;
-    margin-bottom: 15px;
+    gap: 20px;
+    align-items: flex-start;
 }
 
-.app-header img {
-    width: 64px;
-    height: 64px;
-    border-radius: 14px;
+/* Icon */
+.app-icon {
+    width: 78px;
+    height: 78px;
+    border-radius: 22px;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,.7);
 }
 
-.app-header h3 {
-    margin: 0;
-    font-size: 1.4em;
+/* Info */
+.app-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 6px;
 }
 
-.app-card p {
+.app-info p {
     color: var(--muted);
-    font-size: .95em;
-    margin-bottom: 12px;
+    font-size: .96em;
+    margin-bottom: 10px;
 }
 
-.app-card ul {
+.app-info ul {
     list-style: none;
-    padding: 0;
     font-size: .9em;
 }
 
-.app-card li {
+.app-info li {
     margin-bottom: 4px;
 }
 
-/* Screenshots */
+/* =========================
+   SCREENSHOTS
+========================= */
 .screenshots {
     display: flex;
-    gap: 10px;
+    gap: 14px;
     overflow-x: auto;
-    margin-top: 12px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+.screenshots::-webkit-scrollbar {
+    height: 6px;
+}
+
+.screenshots::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,.15);
+    border-radius: 10px;
 }
 
 .screenshots img {
-    width: 110px;
-    border-radius: 16px;
-    transition: transform .2s ease;
+    height: 240px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.8);
+    transition: transform .25s ease;
 }
 
 .screenshots img:hover {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
-/* Notes */
-.notes {
-    margin-top: 60px;
+/* =========================
+   BUTTON
+========================= */
+.altstore-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #4A90E2, #357ABD);
+    color: white;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: .95em;
+    box-shadow: 0 10px 30px rgba(74,144,226,.4);
+    transition: transform .2s ease, box-shadow .2s ease;
 }
 
+.altstore-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(74,144,226,.6);
+}
+
+/* =========================
+   NOTES
+========================= */
 .notes ul {
-    padding-left: 20px;
+    margin-left: 22px;
 }
 
 .notes li {
-    margin-bottom: 8px;
-    color: var(--muted);
+    margin-bottom: 10px;
 }
 
-/* Footer */
+/* =========================
+   FOOTER
+========================= */
 footer {
     text-align: center;
-    margin-top: 60px;
-    font-size: .85em;
     color: var(--muted);
+    font-size: .85em;
+    margin-top: 80px;
 }
 
-@media (max-width: 500px) {
-    header h1 { font-size: 2em; }
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 600px) {
+    .app-header {
+        flex-direction: column;
+    }
+
+    .screenshots img {
+        height: 170px;
+    }
 }
 </style>
 </head>
@@ -194,54 +260,69 @@ footer {
     <p>Official repository of my iOS apps available through AltStore</p>
 </header>
 
-<!-- GLOBAL ADD BUTTON -->
-<div class="add-altstore">
-    <a href="altstore://addsource?url=https://al051195.github.io/altstore/ClassicSource.json">
-        ➕ Add this source to AltStore
-    </a>
-</div>
+<section class="add-source">
+<h2>🚀 Add this source to AltStore</h2>
+<ol>
+    <li>Open <strong>AltStore</strong> on your iPhone</li>
+    <li>Go to the <strong>Sources</strong> tab</li>
+    <li>Tap <strong>＋</strong></li>
+    <li>Paste the following URL:</li>
+</ol>
+<pre>https://al051195.github.io/altstore/ClassicSource.json</pre>
+<p>✅ The source will be added automatically.</p>
+</section>
 
 <section>
-    <h2>📦 Available Apps</h2>
-    <div class="apps">
+<h2>📦 Available Apps</h2>
 
-        <div class="app-card">
-            <div class="app-header">
-                <img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/SkyWizard-SwiftUI/Other/Assets.xcassets/Weather-Preview.imageset/Weather-iOS-Default-1024x1024%401x.png">
-                <h3>🌤 SkyWizard</h3>
-            </div>
+<div class="app-card">
 
-            <p>
-                A modern and elegant weather app built with Liquid Glass in mind.
-            </p>
+    <div class="app-header">
+        <img class="app-icon"
+             src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/SkyWizard-SwiftUI/Other/Assets.xcassets/Weather-Preview.imageset/Weather-iOS-Default-1024x1024@1x.png"
+             alt="SkyWizard icon">
+
+        <div class="app-info">
+            <h3>🌤 SkyWizard</h3>
+            <p>A modern and elegant weather app built with Liquid Glass in mind.</p>
 
             <ul>
-                <li><strong>Bundle ID:</strong> com.Al051195.SkyWizard</li>
+                <li><strong>Bundle ID:</strong> <code>com.Al051195.SkyWizard</code></li>
                 <li><strong>Developer:</strong> AL051195</li>
                 <li><strong>Latest version:</strong> 2.2</li>
             </ul>
-
-            <div class="screenshots">
-                <img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone1.png">
-                <img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone2.png">
-                <img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone3.png">
-                <img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone4.png">
-            </div>
         </div>
-
     </div>
+
+    <div class="screenshots">
+        <img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/banners/iphone1.png">
+        <img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/banners/iphone2.png">
+        <img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/banners/iphone3.png">
+        <img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/banners/iphone4.png">
+        <img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/banners/iphone5.png">
+        <img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/banners/iphone6.png">
+        <img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/banners/iphone7.png">
+    </div>
+
+</div>
 </section>
 
 <section class="notes">
-    <h2>⚡ Notes</h2>
-    <ul>
-        <li>All URLs in <code>ClassicSource.json</code> point to files hosted via <strong>GitHub Pages</strong>.</li>
-        <li>Updates to apps or screenshots will automatically reflect for anyone using the source.</li>
-    </ul>
+<h2>⚡ Notes</h2>
+<ul>
+    <li>All URLs in <code>ClassicSource.json</code> point to files hosted via <strong>GitHub Pages</strong>.</li>
+    <li>Updates to apps or screenshots will automatically reflect for anyone using the source.</li>
+</ul>
+</section>
+
+<section>
+<h2>📝 Contact</h2>
+<p>For feedback or questions, visit my GitHub profile:
+<a href="https://github.com/al051195" target="_blank">AL051195</a></p>
 </section>
 
 <footer>
-    © 2026 AL051195 — All rights reserved
+© 2026 AL051195 — AltStore Source
 </footer>
 
 </div>
