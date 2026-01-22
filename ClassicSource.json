@@ -14,7 +14,7 @@
       "bundleIdentifier": "com.Al051195.SkyWizard",
       "developerName": "Al051195",
       "subtitle": "This is an awesome Weather app only available on AltStore.",
-      "localizedDescription": "A beautiful weather App crafted with Liquid Glass in mind.",
+      "localizedDescription": "A beautiful Weather App crafted with Liquid Glass in mind.",
       "iconURL": "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/SkyWizard-SwiftUI/Other/Assets.xcassets/Weather-Preview.imageset/Weather-iOS-Default-1024x1024@1x.png",
       "tintColor": "#5CA399",
       "screenshots": [
