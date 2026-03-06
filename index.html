@@ -1274,16 +1274,6 @@ a{text-decoration:none}
   draw();
 })();
 
-/* ─── HAPTICS ────────────────────────────────────────────── */
-const HAPTIC = {
-  light:     () => navigator.vibrate?.([12]),
-  medium:    () => navigator.vibrate?.([25]),
-  heavy:     () => navigator.vibrate?.([40]),
-  success:   () => navigator.vibrate?.([50, 50, 50]),
-  error:     () => navigator.vibrate?.([80, 40, 80, 40, 80]),
-  selection: () => navigator.vibrate?.([8]),
-};
-
 /* ─── NAVBAR SCROLL ──────────────────────────────────────── */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20), { passive:true });
@@ -1299,7 +1289,6 @@ document.querySelectorAll('.tl-item').forEach(item => {
   item.addEventListener('click', () => {
     document.querySelectorAll('.tl-item').forEach(i => i.classList.remove('active'));
     item.classList.add('active');
-    HAPTIC.selection();
   });
 });
 
@@ -1312,11 +1301,9 @@ const urlStr  = document.getElementById('urlBox').textContent.trim();
 copyBtn.addEventListener('click', async () => {
   try {
     await navigator.clipboard.writeText(urlStr);
-    HAPTIC.success();
     copyBtn.classList.add('ok');
     cIcon.textContent = '✅'; cText.textContent = 'Copied!';
   } catch {
-    HAPTIC.error();
     cText.textContent = 'Copy failed';
   }
   setTimeout(() => {
@@ -1360,18 +1347,15 @@ function openLb(i){
   lb.classList.add('on'); showNav(true);
   lbCount.textContent = `${i+1} / ${srcs.length}`;
   document.body.style.overflow = 'hidden';
-  HAPTIC.medium();
 }
 function closeLb(){
   lb.classList.remove('on');
   document.body.style.overflow = '';
-  HAPTIC.light();
   setTimeout(() => { lbImg.src=''; showNav(false); }, 320);
 }
 function step(d){
   cur = (cur + d + srcs.length) % srcs.length;
   lbImg.style.opacity='0';
-  HAPTIC.selection();
   setTimeout(() => { lbImg.src=srcs[cur]; lbImg.alt=alts[cur]; lbImg.style.opacity='1'; lbCount.textContent=`${cur+1} / ${srcs.length}`; }, 140);
 }
 lbImg.style.transition='opacity .14s ease';
@@ -1391,16 +1375,6 @@ document.addEventListener('keydown', e => {
 let tX=0;
 lb.addEventListener('touchstart', e => tX=e.touches[0].clientX, {passive:true});
 lb.addEventListener('touchend',   e => { const d=tX-e.changedTouches[0].clientX; if(Math.abs(d)>50) step(d>0?1:-1); }, {passive:true});
-
-/* ─── NAV LINK HAPTICS ───────────────────────────────────── */
-document.querySelectorAll('.nav-link').forEach(el => {
-  el.addEventListener('click', () => HAPTIC.light());
-});
-
-/* ─── PRIMARY BUTTON HAPTICS ─────────────────────────────── */
-document.querySelectorAll('.btn-gold').forEach(el => {
-  el.addEventListener('click', () => HAPTIC.medium());
-});
 
 /* ─── RIPPLE ─────────────────────────────────────────────── */
 document.querySelectorAll('.rip').forEach(el => {
