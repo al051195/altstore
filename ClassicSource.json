@@ -1,10 +1,10 @@
 {
   "name": "AL051195's apps library",
-  "subtitle": "All my apps in one place.",
+  "subtitle": "A hand-curated AltStore repository hosting beautiful iOS applications. Always reliable, always up-to-date.",
   "description": "Welcome to my source! Here you'll find all of my apps.",
   "iconURL": "https://avatars.githubusercontent.com/u/215158776?v=4&size=64",
   "website": "https://al051195.github.io/altstore/",
-  "tintColor": "#4185A9",
+  "tintColor": "#2dd4bf",
   "featuredApps": [
     "com.Al051195.SkyWizard"
   ],
@@ -16,7 +16,7 @@
       "subtitle": "This is an awesome Weather app only available on AltStore.",
       "localizedDescription": "A beautiful Weather App crafted with Liquid Glass in mind.",
       "iconURL": "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/SkyWizard-SwiftUI/Other/Assets.xcassets/Weather-Preview.imageset/Weather-iOS-Default-1024x1024@1x.png",
-      "tintColor": "#5CA399",
+      "tintColor": "#005871",
       "screenshots": [
         "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone1.png",
         "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone2.png",
@@ -32,7 +32,7 @@
           "date": "2025-12-06T09:00:00-08:00",
           "size": 50000000,
           "downloadURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/download/v2.2/SkyWizard-v2.2-Release.ipa",
-          "localizedDescription": "New features and bug fixes. Full changelog on Github : https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases",
+          "localizedDescription": "-> Full changelog on Github : https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases",
           "minOSVersion": "26.0"
         }
       ],
