@@ -364,172 +364,260 @@ a{text-decoration:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
 /* ============================================================
-   INSTALL — horizontal timeline + glass card
+   INSTALL — split editorial layout
    ============================================================ */
 #install{padding:110px 0}
 
-.install-layout{
+.install-split{
   display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:64px;
-  align-items:start;
+  grid-template-columns:1fr 1fr;
+  gap:2px;
   margin-top:56px;
+  border-radius:32px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background:var(--border);
+  position:relative;
 }
 
-/* steps as horizontal timeline blocks */
-.timeline{display:flex;flex-direction:column;gap:2px}
-
-.tl-item{
-  display:grid;
-  grid-template-columns:48px 1fr;
-  gap:0;
-  cursor:pointer;
+/* left panel — dark ambient */
+.isplit-left{
+  background:var(--bg2);
+  padding:56px 52px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.isplit-left::before{
+  content:'';
+  position:absolute;
+  top:-80px;left:-80px;
+  width:320px;height:320px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(245,200,66,0.12), transparent 70%);
+  pointer-events:none;
+}
+.isplit-left::after{
+  content:'';
+  position:absolute;
+  bottom:-60px;right:-40px;
+  width:240px;height:240px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(45,212,191,0.08), transparent 70%);
+  pointer-events:none;
 }
 
-.tl-gutter{
-  display:flex;flex-direction:column;align-items:center;
-  padding-top:18px;
-}
-.tl-num{
-  width:36px;height:36px;
-  border-radius:12px;
-  display:flex;align-items:center;justify-content:center;
+.isplit-eyebrow{
   font-family:'JetBrains Mono',monospace;
-  font-size:.72rem;font-weight:700;
-  background:var(--card);
-  border:1px solid var(--border);
-  color:var(--t3);
-  transition:all .3s var(--spring);
-  flex-shrink:0;
+  font-size:.65rem;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);
+  display:flex;align-items:center;gap:8px;
+  margin-bottom:auto;
 }
-.tl-line{
-  width:2px;flex:1;min-height:20px;
-  background:var(--border);margin-top:6px;
-  transition:background .3s ease;
-}
-.tl-item:last-child .tl-line{display:none}
-
-.tl-body{
-  padding:14px 14px 24px 16px;
-  border-radius:16px;
-  margin:4px 0;
-  transition:all .25s ease;
-  border:1px solid transparent;
+.isplit-eyebrow-line{
+  width:24px;height:1px;
+  background:var(--gold);
+  opacity:.5;
 }
 
-.tl-item.active .tl-num{
-  background:linear-gradient(135deg,var(--gold),#f0a500);
-  border-color:transparent;
-  color:#000;
-  box-shadow:0 4px 16px rgba(245,200,66,0.4);
+.isplit-heading{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.6rem,4.5vw,4rem);
+  font-weight:900;
+  line-height:0.97;
+  letter-spacing:-0.025em;
+  margin:32px 0 20px;
+  position:relative;z-index:1;
 }
-.tl-item.active .tl-line{background:var(--gold-dim)}
-.tl-item.active .tl-body{
-  background:var(--card);
-  border-color:var(--border);
+.isplit-heading em{
+  font-style:italic;
+  background:linear-gradient(115deg,var(--gold) 30%,var(--teal));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
 }
 
-.tl-item:hover .tl-body{background:var(--card)}
-
-.tl-title{
-  font-size:1rem;font-weight:700;
-  margin-bottom:4px;
-  transition:color .2s ease;
+.isplit-desc{
+  font-size:.95rem;
+  color:var(--t2);
+  line-height:1.7;
+  max-width:340px;
+  position:relative;z-index:1;
 }
-.tl-item.active .tl-title{color:var(--gold)}
-.tl-desc{font-size:.875rem;color:var(--t2);line-height:1.5}
 
-/* URL glass card */
-.url-glass{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:28px;
-  padding:36px;
+/* big number accent */
+.isplit-num{
+  font-family:'Playfair Display',serif;
+  font-size:9rem;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:-0.04em;
+  color:rgba(255,255,255,0.03);
+  position:absolute;
+  bottom:-12px;right:20px;
+  pointer-events:none;
+  user-select:none;
+}
+
+/* right panel — action zone */
+.isplit-right{
+  background:rgba(13,22,20,0.6);
   backdrop-filter:blur(24px);
   -webkit-backdrop-filter:blur(24px);
-  position:sticky;top:80px;
-  transition:border-color .25s ease,box-shadow .25s ease;
+  padding:56px 52px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:32px;
+  position:relative;
+  overflow:hidden;
 }
-.url-glass:hover{
-  border-color:var(--border-hov);
-  box-shadow:var(--sh-card);
+.isplit-right::before{
+  content:'';
+  position:absolute;
+  top:0;right:0;
+  width:200px;height:200px;
+  background:radial-gradient(circle at top right, rgba(45,212,191,0.07), transparent 70%);
+  pointer-events:none;
 }
 
-.url-glass-top{
-  display:flex;align-items:center;gap:14px;
-  margin-bottom:24px;
-  padding-bottom:20px;
-  border-bottom:1px solid var(--border);
+/* main action button — full width, tall */
+.btn-altstore{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  padding:22px 28px;
+  background:linear-gradient(135deg,var(--gold) 0%,#e8a000 100%);
+  color:#000;
+  border-radius:20px;
+  font-family:'Syne',sans-serif;
+  font-size:1rem;
+  font-weight:800;
+  border:none;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  text-decoration:none;
+  transition:transform .3s var(--spring), box-shadow .3s ease;
+  box-shadow:0 8px 28px rgba(245,200,66,0.28);
+  letter-spacing:.01em;
 }
-.url-icon{
-  width:46px;height:46px;
-  border-radius:14px;
-  background:linear-gradient(135deg,var(--gold),var(--teal));
+.btn-altstore:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 48px rgba(245,200,66,0.42);
+}
+.btn-altstore:active{transform:scale(.98)}
+.btn-altstore::before{
+  content:'';
+  position:absolute;
+  top:0;left:-100%;
+  width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.22),transparent);
+  transition:left .5s ease;
+}
+.btn-altstore:hover::before{left:160%}
+
+.btn-as-left{
+  display:flex;flex-direction:column;gap:3px;
+}
+.btn-as-label{
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  opacity:.65;
+}
+.btn-as-text{
+  font-size:1.1rem;
+  font-weight:800;
+  letter-spacing:-.01em;
+}
+.btn-as-arrow{
+  width:42px;height:42px;
+  border-radius:12px;
+  background:rgba(0,0,0,0.15);
   display:flex;align-items:center;justify-content:center;
-  font-size:1.3rem;
+  font-size:1.1rem;
   flex-shrink:0;
+  transition:transform .3s var(--spring);
 }
-.url-label{font-size:.95rem;font-weight:700}
-.url-sub{font-size:.78rem;color:var(--t3)}
+.btn-altstore:hover .btn-as-arrow{transform:translateX(4px)}
 
-.url-box{
+/* URL block */
+.isplit-url-block{
+  display:flex;flex-direction:column;gap:8px;
+}
+.isplit-url-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--t3);
+}
+.isplit-url-row{
+  display:flex;
+  align-items:center;
+  gap:0;
   background:var(--bg);
   border:1px solid var(--border);
   border-radius:14px;
-  padding:14px 18px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:.78rem;
-  color:var(--teal);
-  line-height:1.6;
-  word-break:break-all;
-  margin-bottom:14px;
+  overflow:hidden;
   transition:border-color .2s ease;
 }
-.url-box:hover{border-color:var(--teal)}
-
-.copy-pill{
-  width:100%;
-  padding:11px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:12px;
-  color:var(--t1);
-  font-family:'Syne',sans-serif;
-  font-size:.85rem;font-weight:600;
-  cursor:pointer;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  transition:all .25s var(--spring);
-}
-.copy-pill:hover{
-  background:var(--card-hov);
-  border-color:var(--border-hov);
-  transform:translateY(-1px);
-}
-.copy-pill.ok{
-  background:var(--teal-dim);
-  border-color:var(--teal);
-  color:var(--teal);
-}
-
-.steps-mini{
-  margin-top:22px;
-  padding-top:18px;
-  border-top:1px solid var(--border);
-  display:flex;flex-direction:column;gap:8px;
-}
-.step-mini-row{
-  display:flex;align-items:center;gap:10px;
-  font-size:.825rem;color:var(--t2);
-}
-.smr-num{
-  width:20px;height:20px;
-  border-radius:6px;
-  background:var(--card);
-  border:1px solid var(--border);
+.isplit-url-row:focus-within,
+.isplit-url-row:hover{border-color:rgba(45,212,191,0.35)}
+.isplit-url-text{
+  flex:1;
   font-family:'JetBrains Mono',monospace;
-  font-size:.6rem;font-weight:700;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--t3);flex-shrink:0;
+  font-size:.7rem;
+  color:var(--teal);
+  padding:13px 16px;
+  word-break:break-all;
+  line-height:1.5;
+  user-select:all;
+}
+.isplit-copy{
+  flex-shrink:0;
+  padding:0 18px;
+  height:100%;
+  min-height:46px;
+  background:var(--card);
+  border:none;
+  border-left:1px solid var(--border);
+  color:var(--t2);
+  font-family:'Syne',sans-serif;
+  font-size:.78rem;
+  font-weight:700;
+  cursor:pointer;
+  display:flex;align-items:center;gap:7px;
+  transition:all .2s ease;
+  white-space:nowrap;
+  letter-spacing:.02em;
+}
+.isplit-copy:hover{background:var(--card-hov);color:var(--t1)}
+.isplit-copy.ok{background:var(--teal-dim);border-color:rgba(45,212,191,.3);color:var(--teal)}
+
+/* meta row */
+.isplit-meta{
+  display:flex;gap:20px;flex-wrap:wrap;
+  padding-top:8px;
+  border-top:1px solid var(--border);
+}
+.isplit-meta-item{
+  display:flex;flex-direction:column;gap:3px;
+}
+.isplit-meta-val{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;font-weight:700;
+  color:var(--t1);
+}
+.isplit-meta-key{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.58rem;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--t3);
 }
 
 /* ============================================================
@@ -581,7 +669,6 @@ a{text-decoration:none}
   background:conic-gradient(var(--gold),var(--teal),var(--rose),var(--gold));
   animation:spin 6s linear infinite;
 }
-@keyframes spin{to{transform:rotate(360deg)}}
 .app-icon-ring::after{
   content:'';
   position:absolute;inset:-2px;
@@ -951,8 +1038,10 @@ a{text-decoration:none}
     gap:12px;
   }
   .stat-pill{max-width:none;flex:1;min-width:180px}
-  .install-layout{grid-template-columns:1fr}
-  .url-glass{position:static}
+  .install-split{grid-template-columns:1fr}
+  .isplit-left{padding:48px 40px 40px}
+  .isplit-right{padding:40px 40px 48px}
+  .isplit-num{font-size:7rem}
   .app-bento{grid-template-columns:1fr}
   .bento-shots{grid-column:1}
   .feat-grid{grid-template-columns:1fr 1fr}
@@ -970,6 +1059,10 @@ a{text-decoration:none}
   #install,#app,#about{padding:80px 0}
   .footer{padding:24px 20px}
   .cta-band{margin:0 0 60px;border-radius:0;padding:48px 24px}
+  .isplit-left{padding:40px 24px 36px}
+  .isplit-right{padding:36px 24px 44px}
+  .isplit-heading{font-size:2.2rem}
+  .btn-altstore{padding:18px 22px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
@@ -1043,75 +1136,70 @@ a{text-decoration:none}
       <div class="reveal">
         <div class="sec-tag"><div class="sec-tag-bar"></div>Quick Setup</div>
         <h2 class="sec-h2">Installation</h2>
-        <p class="sec-sub">Four steps to add this source directly in AltStore on your device.</p>
+        <p class="sec-sub">Add this source to AltStore in one tap — no manual steps required.</p>
       </div>
 
-  <div class="install-layout">
-    <div class="timeline reveal d1">
-      <div class="tl-item active" data-step="1">
-        <div class="tl-gutter">
-          <div class="tl-num">01</div>
-          <div class="tl-line"></div>
+      <div class="install-split reveal d1">
+
+        <!-- LEFT: editorial copy -->
+        <div class="isplit-left">
+          <div class="isplit-eyebrow">
+            <div class="isplit-eyebrow-line"></div>
+            One tap away
+          </div>
+          <div>
+            <h3 class="isplit-heading">Get it<br>on <em>AltStore.</em></h3>
+            <p class="isplit-desc">Tap the button to open AltStore directly and add this source in seconds — no steps, no friction.</p>
+          </div>
+          <div class="isplit-num">01</div>
         </div>
-        <div class="tl-body">
-          <div class="tl-title">Open AltStore</div>
-          <div class="tl-desc">Launch the AltStore app on your iPhone or iPad.</div>
-        </div>
-      </div>
-      <div class="tl-item" data-step="2">
-        <div class="tl-gutter">
-          <div class="tl-num">02</div>
-          <div class="tl-line"></div>
-        </div>
-        <div class="tl-body">
-          <div class="tl-title">Go to Sources</div>
-          <div class="tl-desc">Tap the Sources tab in the bottom navigation bar.</div>
-        </div>
-      </div>
-      <div class="tl-item" data-step="3">
-        <div class="tl-gutter">
-          <div class="tl-num">03</div>
-          <div class="tl-line"></div>
-        </div>
-        <div class="tl-body">
-          <div class="tl-title">Tap + Add</div>
-          <div class="tl-desc">Press the + button in the top-right corner of Sources.</div>
-        </div>
-      </div>
-      <div class="tl-item" data-step="4">
-        <div class="tl-gutter">
-          <div class="tl-num">04</div>
-          <div class="tl-line"></div>
-        </div>
-        <div class="tl-body">
-          <div class="tl-title">Paste the URL</div>
-          <div class="tl-desc">Enter the repository URL on the right and confirm.</div>
+
+        <!-- RIGHT: action zone -->
+        <div class="isplit-right">
+
+          <!-- primary CTA -->
+          <a href="https://stikstore.app/altdirect/?url=https://al051195.github.io/altstore/ClassicSource.json"
+             class="btn-altstore rip"
+             target="_blank"
+             rel="noopener">
+            <div class="btn-as-left">
+              <span class="btn-as-label">Open in AltStore</span>
+              <span class="btn-as-text">Add Source →</span>
+            </div>
+            <div class="btn-as-arrow">&#8599;</div>
+          </a>
+
+          <!-- manual URL block -->
+          <div class="isplit-url-block">
+            <div class="isplit-url-label">Or paste manually</div>
+            <div class="isplit-url-row">
+              <span class="isplit-url-text" id="urlBox">https://al051195.github.io/altstore/ClassicSource.json</span>
+              <button class="isplit-copy rip" id="copyBtn">
+                <span id="cIcon">📋</span>
+                <span id="cText">Copy</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- meta stats -->
+          <div class="isplit-meta">
+            <div class="isplit-meta-item">
+              <span class="isplit-meta-val">iOS 26+</span>
+              <span class="isplit-meta-key">Minimum OS</span>
+            </div>
+            <div class="isplit-meta-item">
+              <span class="isplit-meta-val">v2.2</span>
+              <span class="isplit-meta-key">Latest Release</span>
+            </div>
+            <div class="isplit-meta-item">
+              <span class="isplit-meta-val" style="color:var(--teal)">Live</span>
+              <span class="isplit-meta-key">Auto Updates</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-
-    <div class="url-glass reveal d2">
-      <div class="url-glass-top">
-        <div class="url-icon">📦</div>
-        <div>
-          <div class="url-label">Source URL</div>
-          <div class="url-sub">Paste this into AltStore</div>
-        </div>
-      </div>
-      <div class="url-box" id="urlBox">https://al051195.github.io/altstore/ClassicSource.json</div>
-      <button class="copy-pill rip" id="copyBtn">
-        <span id="cIcon">📋</span>
-        <span id="cText">Copy URL</span>
-      </button>
-      <div class="steps-mini">
-        <div class="step-mini-row"><div class="smr-num">1</div>Open AltStore on iPhone</div>
-        <div class="step-mini-row"><div class="smr-num">2</div>Sources &#8594; + &#8594; Paste URL</div>
-        <div class="step-mini-row"><div class="smr-num">3</div>Install your apps</div>
-      </div>
-    </div>
-  </div>
-</div>
-
   </section>
 
   <!-- APP -->
@@ -1288,32 +1376,25 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold:.08, rootMargin:'0px 0px -32px 0px' });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-/* ─── STEP TIMELINE ──────────────────────────────────────── */
-document.querySelectorAll('.tl-item').forEach(item => {
-  item.addEventListener('click', () => {
-    document.querySelectorAll('.tl-item').forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
-  });
-});
-
 /* ─── COPY URL ───────────────────────────────────────────── */
 const copyBtn = document.getElementById('copyBtn');
 const cIcon   = document.getElementById('cIcon');
 const cText   = document.getElementById('cText');
 const urlStr  = document.getElementById('urlBox').textContent.trim();
 
-copyBtn.addEventListener('click', async () => {
+copyBtn.addEventListener('click', async (e) => {
+  e.stopPropagation();
   try {
     await navigator.clipboard.writeText(urlStr);
     copyBtn.classList.add('ok');
     cIcon.textContent = '✅'; cText.textContent = 'Copied!';
   } catch {
-    cText.textContent = 'Copy failed';
+    cText.textContent = 'Failed';
   }
   setTimeout(() => {
     copyBtn.classList.remove('ok');
-    cIcon.textContent = '📋'; cText.textContent = 'Copy URL';
-  }, 2000);
+    cIcon.textContent = '📋'; cText.textContent = 'Copy';
+  }, 2200);
 });
 
 /* ─── DRAG-SCROLL TRACK ──────────────────────────────────── */
