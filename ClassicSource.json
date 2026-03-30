@@ -6,7 +6,8 @@
   "website": "https://al051195.github.io/altstore/",
   "tintColor": "#2dd4bf",
   "featuredApps": [
-    "com.Al051195.SkyWizard", "com.Al051195.Scriptum"
+    "com.Al051195.SkyWizard",
+    "com.Al051195.Scriptum"
   ],
   "apps": [
     {
@@ -41,26 +42,17 @@
           "NSLocationWhenInUseUsageDescription": "Sky Wizard needs access to your current location data to fetch weather for your location."
         }
       }
-    }
-  ]
-  [
+    },
     {
       "name": "Scriptum",
       "bundleIdentifier": "com.Al051195.Scriptum",
       "developerName": "Al051195",
-      "beta": true
+      "beta": true,
+      "subtitle": "A minimal iOS note-taking app with Liquid Glass and on-device AI.",
       "localizedDescription": "A minimal, beautiful iOS note-taking app built with SwiftUI, native Liquid Glass, and optional on-device AI.",
       "iconURL": "https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/Scriptum.png",
       "tintColor": "#005871",
-      "screenshots": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
+      "screenshots": [],
       "versions": [
         {
           "version": "1.0-BETA",
