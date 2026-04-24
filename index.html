@@ -5,6 +5,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>AL051195 · AltStore</title>
+<meta name="description" content="A hand-curated AltStore repository hosting beautiful iOS applications, including SkyWizard. Always reliable, always up-to-date.">
+<meta property="og:title" content="AL051195 · AltStore Repository">
+<meta property="og:description" content="Beautiful iOS apps from AL051195. Add the AltStore source and stay up-to-date automatically.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://al051195.github.io/altstore/">
+<meta property="og:image" content="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/SkyWizard-SwiftUI/Other/Assets.xcassets/Weather-Preview.imageset/Weather-iOS-Default-1024x1024@1x.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AL051195 · AltStore Repository">
+<meta name="twitter:description" content="Beautiful iOS apps from AL051195. Add the AltStore source and stay up-to-date automatically.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/master/SkyWizard-SwiftUI/Other/Assets.xcassets/Weather-Preview.imageset/Weather-iOS-Default-1024x1024@1x.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -133,6 +143,12 @@ a{text-decoration:none}
   transition:all .2s ease;
 }
 .nav-link:hover{color:var(--t1);background:var(--card)}
+.nav-link:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:2px;
+  border-radius:100px;
+  color:var(--t1);
+}
 
 
 /* ============================================================
@@ -258,6 +274,19 @@ a{text-decoration:none}
 }
 .btn-gold:hover::after{opacity:1}
 .btn-gold:active{transform:scale(.97)}
+.btn-gold:focus-visible,.btn-ghost:focus-visible,.btn-altstore:focus-visible,.isplit-copy:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+}
+.shot:focus-visible{
+  outline:2px solid var(--teal);
+  outline-offset:3px;
+  border-radius:18px;
+}
+.lb-x:focus-visible,.lb-arr:focus-visible{
+  outline:2px solid rgba(255,255,255,0.6);
+  outline-offset:2px;
+}
 
 .btn-ghost{
   display:inline-flex;align-items:center;gap:8px;
@@ -949,6 +978,16 @@ a{text-decoration:none}
   font-family:'JetBrains Mono',monospace;
   font-size:.8rem;color:var(--t3);letter-spacing:.06em;
 }
+.footer-links{
+  display:flex;gap:20px;align-items:center;
+}
+.footer-link{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.75rem;color:var(--t3);letter-spacing:.04em;
+  transition:color .2s ease;
+}
+.footer-link:hover{color:var(--gold)}
+.footer-link:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px;}
 .footer-copy{font-size:.8rem;color:var(--t3)}
 
 /* ============================================================
@@ -1108,11 +1147,11 @@ a{text-decoration:none}
         A hand-curated AltStore repository hosting beautiful iOS applications. Always reliable, always up-to-date.
       </p>
       <div class="hero-actions">
-        <a href="#install" class="btn-gold rip">
+        <a href="#install" class="btn-gold rip" aria-label="Add Source – jump to install section">
           <span>Add Source</span>
           <span aria-hidden="true">&#8594;</span>
         </a>
-        <a href="#app" class="btn-ghost">
+        <a href="#app" class="btn-ghost" aria-label="Browse apps">
           <span>Browse</span>
         </a>
       </div>
@@ -1139,67 +1178,70 @@ a{text-decoration:none}
         <p class="sec-sub">Add this source to AltStore in one tap — no manual steps required.</p>
       </div>
 
-      <div class="install-split reveal d1">
+```
+  <div class="install-split reveal d1">
 
-        <!-- LEFT: editorial copy -->
-        <div class="isplit-left">
-          <div class="isplit-eyebrow">
-            <div class="isplit-eyebrow-line"></div>
-            One tap away
-          </div>
-          <div>
-            <h3 class="isplit-heading">Get it<br>on <em>AltStore.</em></h3>
-            <p class="isplit-desc">Tap the button to open AltStore directly and add this source in seconds — no steps, no friction.</p>
-          </div>
-          <div class="isplit-num">01</div>
+    <!-- LEFT: editorial copy -->
+    <div class="isplit-left">
+      <div class="isplit-eyebrow">
+        <div class="isplit-eyebrow-line"></div>
+        One tap away
+      </div>
+      <div>
+        <h3 class="isplit-heading">Get it<br>on <em>AltStore.</em></h3>
+        <p class="isplit-desc">Tap the button to open AltStore directly and add this source in seconds — no steps, no friction.</p>
+      </div>
+      <div class="isplit-num">01</div>
+    </div>
+
+    <!-- RIGHT: action zone -->
+    <div class="isplit-right">
+
+      <!-- primary CTA -->
+      <a href="https://stikstore.app/altdirect/?url=https://al051195.github.io/altstore/ClassicSource.json"
+         class="btn-altstore rip"
+         target="_blank"
+         rel="noopener">
+        <div class="btn-as-left">
+          <span class="btn-as-label">Open in AltStore</span>
+          <span class="btn-as-text">Add Source →</span>
         </div>
+        <div class="btn-as-arrow">&#8599;</div>
+      </a>
 
-        <!-- RIGHT: action zone -->
-        <div class="isplit-right">
-
-          <!-- primary CTA -->
-          <a href="https://stikstore.app/altdirect/?url=https://al051195.github.io/altstore/ClassicSource.json"
-             class="btn-altstore rip"
-             target="_blank"
-             rel="noopener">
-            <div class="btn-as-left">
-              <span class="btn-as-label">Open in AltStore</span>
-              <span class="btn-as-text">Add Source →</span>
-            </div>
-            <div class="btn-as-arrow">&#8599;</div>
-          </a>
-
-          <!-- manual URL block -->
-          <div class="isplit-url-block">
-            <div class="isplit-url-label">Or paste manually</div>
-            <div class="isplit-url-row">
-              <span class="isplit-url-text" id="urlBox">https://al051195.github.io/altstore/ClassicSource.json</span>
-              <button class="isplit-copy rip" id="copyBtn">
-                <span id="cIcon">📋</span>
-                <span id="cText">Copy</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- meta stats -->
-          <div class="isplit-meta">
-            <div class="isplit-meta-item">
-              <span class="isplit-meta-val">iOS 26+</span>
-              <span class="isplit-meta-key">Minimum OS</span>
-            </div>
-            <div class="isplit-meta-item">
-              <span class="isplit-meta-val">v2.2</span>
-              <span class="isplit-meta-key">Latest Release</span>
-            </div>
-            <div class="isplit-meta-item">
-              <span class="isplit-meta-val" style="color:var(--teal)">Live</span>
-              <span class="isplit-meta-key">Auto Updates</span>
-            </div>
-          </div>
-
+      <!-- manual URL block -->
+      <div class="isplit-url-block">
+        <div class="isplit-url-label">Or paste manually</div>
+        <div class="isplit-url-row">
+          <span class="isplit-url-text" id="urlBox">https://al051195.github.io/altstore/ClassicSource.json</span>
+          <button class="isplit-copy rip" id="copyBtn">
+            <span id="cIcon">📋</span>
+            <span id="cText">Copy</span>
+          </button>
         </div>
       </div>
+
+      <!-- meta stats -->
+      <div class="isplit-meta">
+        <div class="isplit-meta-item">
+          <span class="isplit-meta-val">iOS 26+</span>
+          <span class="isplit-meta-key">Minimum OS</span>
+        </div>
+        <div class="isplit-meta-item">
+          <span class="isplit-meta-val">v2.2</span>
+          <span class="isplit-meta-key">Latest Release</span>
+        </div>
+        <div class="isplit-meta-item">
+          <span class="isplit-meta-val" style="color:var(--teal)">Live</span>
+          <span class="isplit-meta-key">Auto Updates</span>
+        </div>
+      </div>
+
     </div>
+  </div>
+</div>
+```
+
   </section>
 
   <!-- APP -->
@@ -1228,28 +1270,31 @@ a{text-decoration:none}
       </div>
     </div>
 
-    <!-- description -->
-    <div class="bento-desc reveal d2">
-      <div class="bento-desc-title">Weather, reimagined.</div>
-      <p class="bento-desc-text">SkyWizard is a stunning iOS weather application built with SwiftUI and Apple's Liquid Glass design language. It combines real-time meteorological data with breathtaking visual presentation — fluid animations, dynamic backgrounds, and an interface that feels like the weather itself.</p>
-    </div>
+```
+<!-- description -->
+<div class="bento-desc reveal d2">
+  <div class="bento-desc-title">Weather, reimagined.</div>
+  <p class="bento-desc-text">SkyWizard is a stunning iOS weather application built with SwiftUI and Apple's Liquid Glass design language. It combines real-time meteorological data with breathtaking visual presentation — fluid animations, dynamic backgrounds, and an interface that feels like the weather itself.</p>
+</div>
 
-    <!-- screenshots — full width row -->
-    <div class="bento-shots reveal d3">
-      <div class="shots-head">
-        <div class="shots-label">Screenshots</div>
-        <div class="shots-hint">Tap to expand &nbsp;·&nbsp; Drag to scroll</div>
-      </div>
-      <div class="shots-track" id="shotsTrack">
-        <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone1.png" alt="Screenshot 1" loading="lazy"></div>
-        <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone2.png" alt="Screenshot 2" loading="lazy"></div>
-        <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone3.png" alt="Screenshot 3" loading="lazy"></div>
-        <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone4.png" alt="Screenshot 4" loading="lazy"></div>
-        <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone5.png" alt="Screenshot 5" loading="lazy"></div>
-        <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone6.png" alt="Screenshot 6" loading="lazy"></div>
-        <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone7.png" alt="Screenshot 7" loading="lazy"></div>
-      </div>
-    </div>
+<!-- screenshots — full width row -->
+<div class="bento-shots reveal d3">
+  <div class="shots-head">
+    <div class="shots-label">Screenshots</div>
+    <div class="shots-hint">Tap to expand &nbsp;·&nbsp; Drag to scroll</div>
+  </div>
+  <div class="shots-track" id="shotsTrack">
+    <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone1.png" alt="Screenshot 1" loading="lazy"></div>
+    <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone2.png" alt="Screenshot 2" loading="lazy"></div>
+    <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone3.png" alt="Screenshot 3" loading="lazy"></div>
+    <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone4.png" alt="Screenshot 4" loading="lazy"></div>
+    <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone5.png" alt="Screenshot 5" loading="lazy"></div>
+    <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone6.png" alt="Screenshot 6" loading="lazy"></div>
+    <div class="shot"><div class="shot-overlay"><div class="shot-overlay-icon">&#10021;</div></div><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone7.png" alt="Screenshot 7" loading="lazy"></div>
+  </div>
+</div>
+```
+
   </div>
 </div>
 
@@ -1301,6 +1346,10 @@ a{text-decoration:none}
 
   <footer class="footer">
     <div class="footer-brand">AL051195</div>
+    <div class="footer-links">
+      <a href="https://github.com/al051195" target="_blank" rel="noopener" class="footer-link">GitHub ↗</a>
+      <a href="#install" class="footer-link">Add Source</a>
+    </div>
     <div class="footer-copy">&copy; 2026 &middot; AltStore Repository</div>
   </footer>
 
@@ -1321,9 +1370,7 @@ a{text-decoration:none}
 (function(){
   const canvas = document.getElementById('meshCanvas');
   const ctx = canvas.getContext('2d');
-  let W, H, scrollY = 0;
-
-  const isDark = () => true;
+  let W, H;
 
   const POINTS = [
     { x:.1, y:.15, r:380, hue:38,  sat:90, lit:55 },
@@ -1343,11 +1390,11 @@ a{text-decoration:none}
 
   function draw(){
     ctx.clearRect(0,0,W,H);
-    const scroll = window.scrollY || 0;
-    const alpha = isDark() ? 0.35 : 0.18;
+    const alpha = 0.35;
 
     POINTS.forEach((p, i) => {
       const ox = offsets[i];
+      const scroll = window.scrollY || 0;
       const px = p.x * W + Math.sin(t * 0.4 + ox.phase) * 60 + Math.sin(scroll * 0.001 + ox.phase) * 40;
       const py = p.y * H + Math.cos(t * 0.3 + ox.phase) * 50 + Math.cos(scroll * 0.0008 + i) * 30;
 
@@ -1358,17 +1405,22 @@ a{text-decoration:none}
       ctx.fillRect(0,0,W,H);
     });
     t += 0.004;
-    requestAnimationFrame(draw);
   }
 
+  let rafId;
+  function loop() { draw(); rafId = requestAnimationFrame(loop); }
+  function stopLoop() { cancelAnimationFrame(rafId); }
+  function startLoop() { rafId = requestAnimationFrame(loop); }
+
   window.addEventListener('resize', resize, { passive:true });
+  document.addEventListener('visibilitychange', () => document.hidden ? stopLoop() : startLoop());
   resize();
-  draw();
+  startLoop();
 })();
 
 /* ─── NAVBAR SCROLL ──────────────────────────────────────── */
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20), { passive:true });
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20), { passive:true });
 
 /* ─── REVEAL ─────────────────────────────────────────────── */
 const obs = new IntersectionObserver(entries => {
@@ -1446,7 +1498,13 @@ function step(d){
 lbImg.style.transition='opacity .14s ease';
 showNav(false);
 
-shots.forEach((s,i) => s.addEventListener('click', () => { if(dragged) return; openLb(i); }));
+shots.forEach((s,i) => {
+  s.setAttribute('tabindex', '0');
+  s.setAttribute('role', 'button');
+  s.setAttribute('aria-label', `View screenshot ${i + 1} of ${shots.length}`);
+  s.addEventListener('click', () => { if(dragged) return; openLb(i); });
+  s.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLb(i); } });
+});
 lbX.addEventListener('click', closeLb);
 lbPrev.addEventListener('click', () => step(-1));
 lbNext.addEventListener('click', () => step(1));
