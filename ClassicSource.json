@@ -35,14 +35,6 @@
           "downloadURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/download/v26.3/SkyWizard-v26.3-Release.ipa",
           "localizedDescription": "Full changelog on GitHub: https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases",
           "minOSVersion": "26.0"
-        },
-        {
-          "version": "26.2",
-          "date": "2025-12-06T09:00:00-08:00",
-          "size": 50000000,
-          "downloadURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/download/v2.2/SkyWizard-v2.2-Release.ipa",
-          "localizedDescription": "Full changelog on GitHub: https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases",
-          "minOSVersion": "26.0"
         }
       ],
       "appPermissions": {
