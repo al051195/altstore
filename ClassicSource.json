@@ -68,25 +68,39 @@
       }
     },
     {
-      "name": "Scriptum",
-      "bundleIdentifier": "com.Al051195.Scriptum",
+      "name": "SkyWizard-Nightly",
+      "bundleIdentifier": "com.Al051195.SkyWizard",
       "developerName": "Al051195",
       "beta": true,
-      "subtitle": "A minimal iOS note-taking app with Liquid Glass and on-device AI.",
-      "localizedDescription": "A minimal, beautiful iOS note-taking app built with SwiftUI, native Liquid Glass, and optional on-device AI.",
-      "iconURL": "https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/Scriptum.png",
+      "subtitle": "An awesome weather app only available on AltStore.",
+      "localizedDescription": "A beautiful weather app crafted with Liquid Glass in mind.",
+      "iconURL": "https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/SkyWizard.png",
       "tintColor": "#005871",
-      "screenshots": [],
+      "screenshots": [
+        "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone1.png",
+        "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone2.png",
+        "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone3.png",
+        "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone4.png",
+        "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone5.png",
+        "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone6.png",
+        "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone7.png"
+      ],
       "versions": [
         {
-          "version": "1.0",
-          "date": "2026-03-30T09:00:00-08:00",
-          "size": 10000000,
-          "downloadURL": "https://github.com/al051195/Scriptum/releases/download/v1.0/Scriptum-1.0-BETA.ipa",
-          "localizedDescription": "Full changelog on GitHub: https://github.com/al051195/Scriptum/releases",
-          "minOSVersion": "17.0"
+          "version": "27.0-Nightly",
+          "date": "2026-06-17T09:00:00-08:00",
+          "size": 70000000,
+          "downloadURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/download/v27-nightly/Debug-iphoneos.ipa",
+          "localizedDescription": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/tag/v27-nightly",
+          "minOSVersion": "26.0"
         }
-      ]
+      ],
+      "appPermissions": {
+        "privacy": {
+          "NSLocationWhenInUseUsageDescription": "SkyWizard needs access to your current location to fetch weather data."
+        }
+      }
     }
+    
   ]
 }
