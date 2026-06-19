@@ -87,6 +87,14 @@
       ],
       "versions": [
         {
+          "version": "27.0-Nightly-2",
+          "date": "2026-06-19T00:00:00-08:00",
+          "size": 120000000,
+          "downloadURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/download/v27-nightly-2/Debug-iphoneos.ipa",
+          "localizedDescription": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/tag/v27-nightly-2",
+          "minOSVersion": "26.0"
+        },
+        {
           "version": "27.0-Nightly",
           "date": "2026-06-17T00:00:00-08:00",
           "size": 70000000,
