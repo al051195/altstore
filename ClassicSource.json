@@ -7,7 +7,7 @@
   "tintColor": "#2dd4bf",
   "featuredApps": [
     "com.Al051195.SkyWizard",
-    "com.Al051195.Scriptum"
+    "com.Al051195.SkyWizard-Nightly"
   ],
   "apps": [
     {
@@ -86,6 +86,14 @@
         "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone7.png"
       ],
       "versions": [
+        {
+          "version": "27.0-Nightly-3",
+          "date": "2026-08-16T00:00:00-08:00",
+          "size": 55000000,
+          "downloadURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/download/v27-nightly-3/Debug-iphoneos.ipa",
+          "localizedDescription": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/tag/v27-nightly-3",
+          "minOSVersion": "26.0"
+        },
         {
           "version": "27.0-Nightly-2",
           "date": "2026-06-19T00:00:00-08:00",
