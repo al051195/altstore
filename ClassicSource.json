@@ -130,7 +130,7 @@
         {
           "version": "v1.0",
           "date": "2026-09-27T00:00:00-08:00",
-          "size": 1000000,
+          "size": 10000000,
           "downloadURL": "https://github.com/al051195/Trippy/releases/download/v1.0-Nightly/Trippy-Debug-iphoneos.ipa",
           "localizedDescription": "https://github.com/al051195/Trippy/releases/tag/v1.0-Nightly",
           "minOSVersion": "26.0"
