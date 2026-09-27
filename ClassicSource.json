@@ -7,6 +7,7 @@
   "tintColor": "#2dd4bf",
   "featuredApps": [
     "com.Al051195.SkyWizard",
+    "com.Al051195.SkyWizard-Nightly",
     "com.Al051195.SkyWizard-Nightly"
   ],
   "apps": [
@@ -116,6 +117,26 @@
           "NSLocationWhenInUseUsageDescription": "SkyWizard needs access to your current location to fetch weather data."
         }
       }
+    },
+    {
+      "name": "Trippy",
+      "bundleIdentifier": "com.Al051195.Trippy",
+      "developerName": "Al051195",
+      "beta": true,
+      "subtitle": "A travel journal app for iOS.",
+      "localizedDescription": "Import your photos and videos, organize them into moments, and turn the day into a story with a Liquid Glass presentation view. Includes smart title suggestions and natural-language photo search.",
+      "iconURL": "https://raw.githubusercontent.com/al051195/Trippy/refs/heads/main/repo-assets/Trippy1-iOS-Default-1024%401x.png",
+      "tintColor": "#BE5C0F",
+      "versions": [
+        {
+          "version": "v1.0",
+          "date": "2026-09-27T00:00:00-08:00",
+          "size": 1000000,
+          "downloadURL": "https://github.com/al051195/Trippy/releases/download/v1.0-Nightly/Trippy-Debug-iphoneos.ipa",
+          "localizedDescription": "https://github.com/al051195/Trippy/releases/tag/v1.0-Nightly",
+          "minOSVersion": "26.0"
+        }
+      ],
     }
     
   ]
