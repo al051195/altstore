@@ -29,6 +29,14 @@
       ],
       "versions": [
         {
+          "version": "27.0",
+          "date": "2026-10-19T09:00:00-08:00",
+          "size": 55000000,
+          "downloadURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/download/v27.0/SkyWizard-v27.0-Release.ipa",
+          "localizedDescription": "Full changelog on GitHub: https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases",
+          "minOSVersion": "26.0"
+        },
+        {
           "version": "26.3.1",
           "date": "2026-05-10T09:00:00-08:00",
           "size": 50000000,
@@ -135,7 +143,7 @@
           "localizedDescription": "https://github.com/al051195/Trippy/releases/tag/v1.0-Nightly",
           "minOSVersion": "26.0"
         }
-      ],
+      ]
     }
     
   ]
