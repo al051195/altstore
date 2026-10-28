@@ -82,7 +82,7 @@
       "beta": true,
       "subtitle": "An awesome weather app only available on AltStore.",
       "localizedDescription": "A beautiful weather app crafted with Liquid Glass in mind.",
-      "iconURL": "https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/SkyWizard.png",
+      "iconURL": "https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/Skywizard.png",
       "tintColor": "#005871",
       "screenshots": [
         "https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone1.png",
