@@ -10,11 +10,11 @@
   <meta property="og:description" content="Beautiful iOS apps from AL051195. Add the AltStore source and stay up-to-date automatically.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://al051195.github.io/altstore/">
-  <meta property="og:image" content="https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/SkyWizard.png">
+  <meta property="og:image" content="https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/Skywizard.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AL051195 · AltStore Repository">
   <meta name="twitter:description" content="Beautiful iOS apps from AL051195. Add the AltStore source and stay up-to-date automatically.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/SkyWizard.png">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/Skywizard.png">
 
   <script>
     /* Theme before paint: stored choice → system preference → dark */
@@ -46,6 +46,8 @@
 
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
+      --radius-icon: 22.37%;   /* native iOS app-icon corner ratio */
+
       --nav-h: 68px;
     }
 
@@ -57,7 +59,7 @@
       --muted:         #a3a198;
       --border:        #30302e;
       --border-strong: #45433e;
-      --nav-glass:     rgba(20, 20, 19, 0.7);
+      --nav-glass:     rgba(20, 20, 19, 0.55);
       --edge:          rgba(250, 249, 245, 0.06);   /* 1px inner top highlight */
       --overlay:       rgba(20, 20, 19, 0.82);
       --copy-bg:       #141413;
@@ -72,7 +74,7 @@
       --muted:         #6b6961;
       --border:        #e8e6df;
       --border-strong: #d3d0c6;
-      --nav-glass:     rgba(250, 249, 245, 0.7);
+      --nav-glass:     rgba(250, 249, 245, 0.55);
       --edge:          rgba(20, 20, 19, 0.03);
       --overlay:       rgba(20, 20, 19, 0.55);
       --copy-bg:       #faf9f5;
@@ -432,8 +434,7 @@
       width: 76px;
       height: 76px;
       flex: none;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
+      border-radius: var(--radius-icon);
       background: var(--surface-2);
       overflow: hidden;
       display: grid;
@@ -487,27 +488,6 @@
       margin-top: 4px;
     }
     .app-desc strong { color: var(--text); font-weight: 600; }
-
-    /* Placeholder treatment — Trippy */
-    .placeholder-box {
-      border: 1px dashed var(--border-strong);
-      border-radius: var(--radius-md);
-      display: grid;
-      place-items: center;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      background: var(--copy-bg);
-    }
-    .placeholder-icon { width: 76px; height: 76px; flex: none; }
-    .placeholder-desc {
-      min-height: 88px;
-      margin-top: 4px;
-      padding: 18px;
-      font-size: 0.72rem;
-    }
 
     .app-foot {
       margin-top: auto;
@@ -588,7 +568,7 @@
       align-items: center;
       gap: 8px;
       margin-top: 14px;
-      padding: 8px 8px 8px 20px;
+      padding: 7px;
       background: var(--copy-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius-pill);
@@ -597,6 +577,14 @@
     .install-url:focus-within { border-color: var(--border-strong); }
 
     .install-url-label {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: inset 0 1px 0 var(--edge);
       color: var(--muted);
       white-space: nowrap;
       font-weight: 500;
@@ -925,7 +913,7 @@
 
           <div class="app-head" style="margin-top: 22px;">
             <div class="app-icon">
-              <img src="https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/SkyWizard.png" alt="SkyWizard app icon" loading="lazy">
+              <img src="https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/Skywizard.png" alt="SkyWizard app icon" loading="lazy">
             </div>
             <div>
               <div class="app-name">SkyWizard</div>
@@ -958,35 +946,40 @@
           </div>
 
           <div class="app-foot">
-            <a class="text-link" href="https://altdirect.app/?url=https://al051195.github.io/altstore/ClassicSource.json" target="_blank" rel="noopener">Open in AltStore <span aria-hidden="true">&rarr;</span></a>
+            <a class="text-link" href="https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">&rarr;</span></a>
             <span class="app-foot-note">Nightly available</span>
           </div>
         </article>
 
-        <!-- ── Trippy panel (placeholder) ── -->
+        <!-- ── Trippy panel ── -->
         <article class="app-panel panel reveal d2">
-          <div class="panel-tag mono" aria-hidden="true"><span>Panel</span><span class="idx">/ 02</span><span>Coming soon</span></div>
+          <div class="panel-tag mono" aria-hidden="true"><span>Panel</span><span class="idx">/ 02</span><span>New</span></div>
 
           <div class="app-head" style="margin-top: 22px;">
-            <div class="placeholder-box placeholder-icon" aria-label="Trippy icon placeholder">Placeholder</div>
+            <div class="app-icon">
+              <img src="https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/Trippy.png" alt="Trippy app icon" loading="lazy">
+            </div>
             <div>
               <div class="app-name">Trippy</div>
               <div class="app-sub">A travel journal app for iOS.</div>
               <div class="badge-row">
                 <span class="tag">v1.0</span>
-                <span class="tag tag-accent">Beta</span>
-                <span class="tag">Coming&nbsp;soon</span>
+                <span class="tag">iOS 26+</span>
+                <span class="tag tag-accent"><span class="tag-dot" aria-hidden="true"></span>Beta</span>
               </div>
             </div>
           </div>
 
-          <div class="placeholder-box placeholder-desc" aria-label="Trippy description placeholder">
-            Placeholder
-          </div>
+          <p class="app-desc">
+            Import your photos and videos, organize them into moments, and turn the day
+            into a story story into a <strong>beautiful Liquid Glass journal.</strong>. Includes
+            smart title suggestions and natural-language photo search. Now available as a
+            <strong>beta</strong> build.
+          </p>
 
           <div class="app-foot">
-            <span class="text-link" style="color: var(--muted); cursor: default;" aria-disabled="true">Install <span aria-hidden="true">&rarr;</span></span>
-            <span class="app-foot-note">In development</span>
+            <a class="text-link" href="https://github.com/al051195/Trippy" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">&rarr;</span></a>
+            <span class="app-foot-note">Open in AltStore &middot; Nightly</span>
           </div>
         </article>
 
