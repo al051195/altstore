@@ -132,8 +132,15 @@
       "beta": true,
       "subtitle": "A travel journal app for iOS.",
       "localizedDescription": "Import your photos and videos, organize them into moments, and turn the day into a story with a Liquid Glass presentation view. Includes smart title suggestions and natural-language photo search.",
-      "iconURL": "https://raw.githubusercontent.com/al051195/Trippy/refs/heads/main/repo-assets/Trippy1-iOS-Default-1024%401x.png",
+      "iconURL": "https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/Trippy.png",
       "tintColor": "#BE5C0F",
+      "screenshots": [
+        "https://raw.githubusercontent.com/al051195/Trippy/refs/heads/main/repo-assets/banners/iphone1.png",
+        "https://raw.githubusercontent.com/al051195/Trippy/refs/heads/main/repo-assets/banners/iphone2.png",
+        "https://raw.githubusercontent.com/al051195/Trippy/refs/heads/main/repo-assets/banners/iphone3.png",
+        "https://raw.githubusercontent.com/al051195/Trippy/refs/heads/main/repo-assets/banners/iphone4.png",
+        "https://raw.githubusercontent.com/al051195/Trippy/refs/heads/main/repo-assets/banners/iphone5.png"
+      ],
       "versions": [
         {
           "version": "1.0",
