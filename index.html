@@ -105,6 +105,7 @@
       background: var(--bg);
       color: var(--text);
       -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
       padding-left:  max(0px, env(safe-area-inset-left));
@@ -112,6 +113,9 @@
       padding-bottom: max(0px, env(safe-area-inset-bottom));
       transition: background .35s var(--ease), color .35s var(--ease);
     }
+
+    /* Instant taps on mobile (no 300ms double-tap-zoom delay) */
+    a, button, input { touch-action: manipulation; }
 
     ::selection { background: var(--accent); color: var(--ink); }
 
@@ -356,7 +360,7 @@
       border-radius: 50%;
       background: var(--accent);
     }
-    .hero-chip span {
+    .hero-chip span:last-child {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem;
       letter-spacing: 0.08em;
@@ -403,7 +407,6 @@
       font-weight: 600;
       letter-spacing: -0.01em;
     }
-    .hero-stat-value .accent { font-weight: 600; }
 
     @media (max-width: 720px) {
       .hero-stats { grid-template-columns: 1fr; }
@@ -434,6 +437,7 @@
       display: flex;
       align-items: center;
       gap: 18px;
+      margin-top: 22px;
       margin-bottom: 22px;
     }
 
@@ -444,8 +448,6 @@
       border-radius: var(--radius-icon);
       background: var(--surface-2);
       overflow: hidden;
-      display: grid;
-      place-items: center;
     }
     .app-icon img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -663,6 +665,7 @@
         border-top: 1px solid var(--border);
       }
       .install-meta-item:first-child { margin-top: 0; padding-top: 18px; }
+      .feat-grid { grid-template-columns: 1fr; }
     }
 
     /* ============================================================
@@ -699,10 +702,6 @@
       border: 1px solid var(--border);
       background: var(--surface-2);
       color: var(--text);
-    }
-
-    @media (max-width: 880px) {
-      .feat-grid { grid-template-columns: 1fr; }
     }
 
     /* ============================================================
@@ -804,11 +803,6 @@
       backdrop-filter: blur(20px);
     }
 
-    @media (max-width: 640px) {
-      .lb-prev { left: 12px; }
-      .lb-next { right: 12px; }
-    }
-
     /* ============================================================
        REVEAL ANIMATION
        ============================================================ */
@@ -828,6 +822,58 @@
         animation-duration: 0.01ms !important;
       }
       .reveal { opacity: 1; transform: none; }
+    }
+
+    /* ============================================================
+       MOBILE ADAPTATIONS — ≤640px only
+       (desktop & tablet keep every style above untouched)
+       ============================================================ */
+    @media (max-width: 640px) {
+      /* tighter page gutters */
+      .wrap, .nav-inner { padding-left: 16px; padding-right: 16px; }
+
+      /* compact "Add Source" CTA returns to the navbar */
+      .nav-cta {
+        display: inline-flex;
+        padding: 8px 14px;
+        font-size: 0.78rem;
+      }
+
+      /* vertical rhythm */
+      .section { padding-top: 60px; }
+      .section:last-of-type { padding-bottom: 64px; }
+      .sec-head { margin-bottom: 24px; }
+      .footer { margin-top: 64px; padding: 26px 0 34px; }
+
+      /* hero: stacked full-width buttons, tighter tiles */
+      .hero-top { padding: 30px 22px 26px; }
+      .hero-actions { margin-top: 24px; }
+      .hero-actions .btn { flex: 1 1 100%; }
+      .hero-stat { padding: 16px 20px; }
+
+      /* panels: slimmer padding for narrow screens */
+      .panel-tag { padding: 18px 20px 0; }
+      .app-panel { padding: 22px 20px; }
+      .feat-card { padding: 22px 20px; }
+      .install-grid { padding: 24px 20px; gap: 26px; }
+
+      /* screenshots: sized for thumb-scrolling */
+      .shot img { height: 250px; }
+      .shots-track { overscroll-behavior-x: contain; }
+
+      /* install pill: compact chip + copy button */
+      .install-url { padding: 6px; gap: 6px; }
+      .install-url-label { padding: 9px 12px; }
+      .copy-btn { padding: 9px 14px; }
+
+      /* lightbox: controls move below the image */
+      .lb { padding-bottom: 72px; }
+      .lb-img { max-height: 72vh; }
+      .lb-btn { width: 40px; height: 40px; }
+      .lb-prev, .lb-next { top: auto; bottom: 16px; transform: none; }
+      .lb-prev { left: 14px; }
+      .lb-next { right: 14px; }
+      .lb-count { bottom: 23px; }
     }
   </style>
 </head>
@@ -918,7 +964,7 @@
         <article class="app-panel panel reveal d1">
           <div class="panel-tag mono" aria-hidden="true"><span>Panel</span><span class="idx">/ 01</span><span>Featured</span></div>
 
-          <div class="app-head" style="margin-top: 22px;">
+          <div class="app-head">
             <div class="app-icon">
               <img src="https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/Skywizard.png" alt="SkyWizard app icon" loading="lazy">
             </div>
@@ -941,7 +987,7 @@
 
           <div class="shots">
             <div class="shots-label mono">Screenshots · Tap to expand · Drag to scroll</div>
-            <div class="shots-track" id="shotsTrackSkyWizard">
+            <div class="shots-track">
               <button class="shot" aria-label="Open screenshot 1"><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone1.png" alt="SkyWizard screenshot 1" loading="lazy"></button>
               <button class="shot" aria-label="Open screenshot 2"><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone2.png" alt="SkyWizard screenshot 2" loading="lazy"></button>
               <button class="shot" aria-label="Open screenshot 3"><img src="https://raw.githubusercontent.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/refs/heads/master/banners/iphone3.png" alt="SkyWizard screenshot 3" loading="lazy"></button>
@@ -962,7 +1008,7 @@
         <article class="app-panel panel reveal d2">
           <div class="panel-tag mono" aria-hidden="true"><span>Panel</span><span class="idx">/ 02</span><span>New</span></div>
 
-          <div class="app-head" style="margin-top: 22px;">
+          <div class="app-head">
             <div class="app-icon">
               <img src="https://raw.githubusercontent.com/al051195/altstore/refs/heads/main/AppIcons/Trippy.png" alt="Trippy app icon" loading="lazy">
             </div>
@@ -985,7 +1031,7 @@
 
           <div class="shots">
             <div class="shots-label mono">Screenshots · Tap to expand · Drag to scroll</div>
-            <div class="shots-track" id="shotsTrackTrippy">
+            <div class="shots-track">
               <button class="shot" aria-label="Open screenshot 1"><img src="https://raw.githubusercontent.com/al051195/Trippy/refs/heads/main/repo-assets/banners/iphone1.png" alt="Trippy screenshot 1" loading="lazy"></button>
               <button class="shot" aria-label="Open screenshot 2"><img src="https://raw.githubusercontent.com/al051195/Trippy/refs/heads/main/repo-assets/banners/iphone2.png" alt="Trippy screenshot 2" loading="lazy"></button>
               <button class="shot" aria-label="Open screenshot 3"><img src="https://raw.githubusercontent.com/al051195/Trippy/refs/heads/main/repo-assets/banners/iphone3.png" alt="Trippy screenshot 3" loading="lazy"></button>
@@ -1045,7 +1091,7 @@
             </a>
 
             <div class="install-url">
-              <span class="install-url-label" id="urlLabel">Source</span>
+              <span class="install-url-label">Source</span>
               <input class="install-url-text" id="urlBox" type="text" readonly spellcheck="false" aria-label="The source URL (read only)" value="https://al051195.github.io/altstore/ClassicSource.json">
               <button class="copy-btn" id="copyBtn" aria-label="Copy the source URL to the clipboard">
                 <span id="cText">Copy</span>
