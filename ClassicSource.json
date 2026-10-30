@@ -29,6 +29,14 @@
       ],
       "versions": [
         {
+          "version": "27.1",
+          "date": "2026-10-30T09:00:00-08:00",
+          "size": 55000000,
+          "downloadURL": "https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases/download/v27.1/SkyWizard-v27.1-Release.ipa",
+          "localizedDescription": "Full changelog on GitHub: https://github.com/al051195/SkyWizard-SwiftUI-Liquid-Glass/releases",
+          "minOSVersion": "26.0"
+        },
+        {
           "version": "27.0",
           "date": "2026-10-18T09:00:00-08:00",
           "size": 55000000,
